@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserDao {
-    @Insert("insert into flash(username,password) values(#{username},#{password})")
+    @Insert("insert into user(username,password,createTime,updateTime,createUserId,updateUserId,deleteFlag) values(#{username},#{password},#{createTime},#{updateTime},#{createUserId},#{updateUserId},#{deleteFlag})")
     void addUser(User user);
 
     @Select("select * from flash where username=#{username}")
